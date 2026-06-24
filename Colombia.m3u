@@ -1,0 +1,516 @@
+#EXTM3U
+#EXTINF:-1 group-title="Tv Cable📡",13 C
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a07p/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",A&E HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a058/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",AMC HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a069/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",AVIVAMIENTO
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a002/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",AXN HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a005/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Adult Swim
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a06r/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Animal Planet HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a07x/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",BETHEL TV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a07q/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Baby TV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a08a/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",CARACOL HD
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a0a1/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",CARACOL SD TRANSCODIFICADO
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a09n/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",CINEMA GLOBAL
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a08e/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",CNN Español
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00t/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal Capital
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a075/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal Caracol
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a08m/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal Institucional
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a04t/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal RCN
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a08n/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal TRO
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a072/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal Uno
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a04u/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Canal del Congreso
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a07j/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Cartoon Network HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a08b/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Cartoonito
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05r/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Cinecanal HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a06j/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Cinemax
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01q/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",City TV
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a074/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Cristovisiðn-TRANSMISION
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a0a3/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",DHE
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a066/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",DSPORTS
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a0a9/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",DW Espaæol
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01h/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",De Pelicula
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a080/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Discovery Channel  HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05k/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Discovery Kids HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00s/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Discovery Science
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00h/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Discovery Theater HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a04e/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Discovery Turbo
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01v/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Discovery World HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05g/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Disney Channel
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05y/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Disney Jr.
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00z/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",E! Entertainment TV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a019/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a04l/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 2 HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a05n/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 2 Latin
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a08c/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 3 HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a061/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 4 HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a07f/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 5 HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a082/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 6 HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a062/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN 7 HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a01j/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",ESPN HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a05t/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",EWTN
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a06w/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",El Gourmet HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a0as/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Enlace
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00o/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Europa Europa
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a08d/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",FX HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a044/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Food Network
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00j/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HBO 2
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00v/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HBO Family HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a02s/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HBO HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a049/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HBO POP HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01n/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HBO Xtreme HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00x/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HGTV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05p/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",HTV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a0ax/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",History Channel HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05b/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Home & Health HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00u/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",ID HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a04h/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",INTALNET TV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a089/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",LA KALLE
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a04j/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Las Estrellas HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a09t/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Lifetime
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a0c0/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Love Nature-TRANSMISION
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a0cg/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",MTV HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00i/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",NTN24-TRANSMISION
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a0aq/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Nat Geo HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a07y/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Nick Jr.
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01u/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Nickelodeon HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a02n/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",OROMAR TV
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a0a4/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Pasiones HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05x/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",RCN HD
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a0a2/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",RCN Novelas
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a07c/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Señal Colombia
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a04s/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Space HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a05l/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Star Channel HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a07t/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Studio Universal
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a041/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TCM
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00l/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TLC
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01g/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TNT HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a060/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TNT Novelas HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a07d/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TNT Series HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a022/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",TNT Sports Premium SD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a05i/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TVN-TRANSMISION
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a090/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Teleantioquia
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a06g/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Telecafe
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a01z/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Telecaribe
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a01y/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",TelefØ
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a01w/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Teleislas
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a073/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Telemedellin HD
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a07k/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Telemundo
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a01l/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Telepacifico
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a01t/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Tlnovelas
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00k/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Tooncast
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a06i/index.m3u8
+#EXTINF:-1 group-title="Nacionales 🇨🇴",Trece
+#EXTGRP:Nacionales 🇨🇴
+http://190.61.42.218:9000/play/a020/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",TyC
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a047/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",UNIVERSAL CHANNEL HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00g/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",USA
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a00r/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Warner TV HD
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a04d/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",Win
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a084/index.m3u8
+#EXTINF:-1 group-title="⚽DEPORTES🏆",Win Sports+ HD
+#EXTGRP:⚽DEPORTES🏆
+http://190.61.42.218:9000/play/a01s/index.m3u8
+#EXTINF:-1 group-title="Tv Cable📡",Zoom
+#EXTGRP:Tv Cable📡
+http://190.61.42.218:9000/play/a071/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",A&E HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0eu/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",AMC HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a057/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",AMC Series
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fb/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",AVIVAMIENTO
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a01b/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",AXN HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0cu/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",America TV HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a09d/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Animal Planet HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0c6/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",BETHEL TV
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a06t/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Cartoon Network
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fi/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Cartoonito
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0do/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Cinecanal
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0dw/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Cinemax
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fm/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",DHE HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0c9/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",De Pelicula
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0ei/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Discovery Channel
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0dx/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Discovery HGTV
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0ef/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Discovery Kids
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0dy/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Discovery Turbo
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0ee/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Discovery h&h
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0e2/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Disney Channel
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0dz/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Disney Channel HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0ex/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",ENLACE
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a09r/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",El Gourmet HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a051/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",FX
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0e0/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Food Network
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fg/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Globovision
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0cx/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Golden
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0eh/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Golden Edge
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fc/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",HTV
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0eg/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",History 2
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fd/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",History Channel HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0c7/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",ID HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0c5/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Lifetime
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a08b/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Nat Geo HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a052/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Pasiones HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a09c/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",SURAN
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a06g/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Sony HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0cb/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Sony Movies
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fh/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Space
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0e1/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Star Channel
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0e8/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Studio Universal HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0ce/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",TCM
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0dp/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",TNT
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0e3/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",TNT Novelas
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0ci/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",TNT Series
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0e9/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",TNT Series
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0fn/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",TeleNostalgia
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0dn/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Telemundo
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0f8/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Tlnovelas
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0es/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Tooncast
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a004/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",UNIVERSAL CHANNEL HD
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0a6/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",UNIVISION
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a06n/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Venevision Plus
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a00j/index.m3u8
+#EXTINF:-1 group-title="Tv Cable 2📡",Warner Channel
+#EXTGRP:Tv Cable 2📡
+http://190.61.46.92:8009/play/a0eb/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",CARACOL
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0b1/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",CARACOL H
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0dg/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",CARACOL HD 2
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0ds/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",Canal El Tiempo
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0fo/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",Citytv
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a096/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",LA KALLE
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0du/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",Nuestra Tele
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0dq/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",RCN H
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a0dd/index.m3u8
+#EXTINF:-1 group-title="Nacionales 2🇨🇴",Telesur
+#EXTGRP:Nacionales 2🇨🇴
+http://190.61.46.92:8009/play/a09q/index.m3u8
+#EXTINF:-1 group-title="⚽ DEPORTES 2🏆",ESPN
+#EXTGRP:⚽ DEPORTES 2🏆
+http://190.61.46.92:8009/play/a0dh/index.m3u8
+#EXTINF:-1 group-title="⚽ DEPORTES 2🏆",ESPN 2
+#EXTGRP:⚽ DEPORTES 
