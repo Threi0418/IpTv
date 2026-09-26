@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>✨ Angel Exspectrus ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-deep: #0A0A0F;
+            --bg-base: #121218;
+            --bg-surface: #1A1A24;
+            --bg-elevated: #22222E;
+            --orange-primary: #FF4D4D;
+            --white-pure: #FFFFFF;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A1A1AA;
+            --text-muted: #71717A;
+            --border-orange: 1px solid rgba(255, 77, 77, 0.3);
+            --shadow-orange: 0 8px 24px rgba(255, 77, 77, 0.25);
+            --gradient-orange: linear-gradient(135deg, #FF4D4D, #FF8A5C);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: 0.2s ease;
+            --header-h: 70px;
+            --focus-glow: 0 0 0 3px rgba(255, 77, 77, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html, body { height: 100%; overflow: hidden; }
+        body { background: var(--bg-deep); color: var(--text-primary); line-height: 1.5; }
+        :focus-visible { outline: none; box-shadow: var(--focus-glow); }
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-surface); }
+        ::-webkit-scrollbar-thumb { background: var(--orange-primary); border-radius: 99px; }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .header {
+            flex-shrink: 0;
+            height: var(--header-h);
+            background: rgba(10, 10, 15, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-orange);
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 200;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .main-logo { 
+            height: 50px; 
+            width: auto; 
+            max-width: 180px; 
+            object-fit: contain; 
+        }
+        
+        .brand-image {
+            height: 50px;
+            width: auto;
+            max-width: 250px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .menu-container { position: relative; }
+        .menu-button {
+            background: var(--bg-surface);
+            color: var(--white-pure);
+            font-size: 1rem;
+            padding: 6px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-button:hover { background: var(--orange-primary); }
+        .menu-dropdown {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background: var(--bg-surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-orange);
+            border-radius: var(--radius-lg);
+            padding: 6px;
+            min-width: 170px;
+            display: none;
+            z-index: 1000;
+            box-shadow: var(--shadow-orange);
+        }
+        .menu-dropdown.show { display: block; }
+        
+        .community-link {
+            display: block;
+            padding: 6px 12px;
+            color: var(--white-pure);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            border-bottom: 1px solid var(--border-orange);
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            background: rgba(255, 77, 77, 0.05);
+            transition: all var(--transition);
+            margin-bottom: 4px;
+        }
+        .community-link:hover {
+            background: rgba(255, 77, 77, 0.15);
+            color: var(--orange-primary);
+        }
+        .community-link i {
+            margin-right: 8px;
+            color: var(--orange-primary);
+        }
+
+        .expiry-section { 
+            padding: 8px; 
+            border-bottom: 1px solid var(--border-orange); 
+            text-align: center;
+        }
+        .expiry-label { color: var(--text-secondary); font-size: 0.55rem; text-transform: uppercase; }
+        .expiry-date { color: var(--orange-primary); font-size: 0.85rem; font-weight: 700; }
+        .menu-item { padding: 6px 12px; color: var(--white-pure); font-size: 0.75rem; cursor: pointer; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; justify-content: center; }
+        .menu-item:hover { background: rgba(255, 77, 77, 0.15); }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: var(--bg-deep);
+            padding: 12px 16px 16px 16px;
+            gap: 12px;
+        }
+
+        .search-container {
+            flex-shrink: 0;
+            background: var(--bg-surface);
+            border-radius: var(--radius-xl);
+            padding: 6px 12px;
+            border: 1px solid var(--border-orange);
+            position: relative;
+            order: 0;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg-elevated);
+            border-radius: 40px;
+            padding: 5px 14px;
+            transition: all var(--transition);
+        }
+        .search-box:focus-within { border-color: var(--orange-primary); box-shadow: var(--shadow-orange); }
+        .search-box i { color: var(--text-secondary); font-size: 0.8rem; margin-right: 8px; }
+        .search-box input {
+            flex: 1; background: transparent; border: none; color: var(--white-pure);
+            font-size: 0.85rem; padding: 8px 0; outline: none;
+        }
+        .search-box input::placeholder { color: var(--text-muted); font-size: 0.75rem; }
+        .search-clear {
+            background: none; border: none; color: var(--text-secondary); cursor: pointer;
+            font-size: 0.75rem; padding: 3px; display: none;
+        }
+        .search-clear:hover { color: var(--orange-primary); }
+        .search-results {
+            position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-surface);
+            border: 1px solid var(--border-orange); border-radius: var(--radius-lg);
+            max-height: 320px; overflow-y: auto; z-index: 200; display: none; margin-top: 4px;
+        }
+        .search-results.show { display: block; }
+        .search-result-item {
+            padding: 8px 12px; cursor: pointer; transition: all var(--transition);
+            border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 10px;
+        }
+        .search-result-item:focus-visible, .search-result-item:hover { background: rgba(255, 77, 77, 0.25); outline: none; }
+        .search-result-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+        .search-result-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .search-result-info { flex: 1; }
+        .search-result-title { font-weight: 600; font-size: 0.8rem; }
+        .search-result-type { font-size: 0.6rem; color: var(--text-secondary); }
+
+        .video-wrapper {
+            flex-shrink: 0;
+            width: 100%;
+            background: transparent;
+            position: relative;
+            order: 1;
+        }
+        .video-error { 
+            color: white; 
+            background: rgba(255, 77, 77, 0.85); 
+            padding: 8px; 
+            font-size: 0.75rem; 
+            text-align: center; 
+            display: none; 
+            border-radius: var(--radius-md);
+            margin-bottom: 6px;
+        }
+        .video-container { 
+            position: relative; 
+            width: 100%; 
+            background: #000; 
+            aspect-ratio: 16 / 9; 
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        #videoPlayer { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: black;
+        }
+        
+        .custom-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 12px 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 30;
+            gap: 16px;
+        }
+        .video-container:hover .custom-controls,
+        .video-container:focus-within .custom-controls {
+            opacity: 1;
+        }
+
+        #currentContent {
+            color: #3B82F6; 
+            font-weight: 600; 
+            font-size: 0.7rem; 
+            background: var(--bg-base);
+            padding: 6px 12px; 
+            text-align: center; 
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-orange);
+        }
+
+        .tabs-container {
+            flex-shrink: 0;
+            order: 2;
+        }
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            background: var(--bg-surface);
+            border-radius: var(--radius-xl);
+            padding: 5px;
+        }
+        .nav-tab {
+            flex: 1;
+            padding: 8px 6px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition);
+            font-weight: 600;
+            font-size: 0.75rem;
+            background: transparent;
+            color: var(--text-secondary);
+        }
+        .nav-tab:focus-visible { outline: none; background: var(--orange-primary); color: white; }
+        .nav-tab:hover { background: var(--bg-elevated); color: var(--white-pure); }
+        .nav-tab.active { background: var(--gradient-orange); color: var(--white-pure); box-shadow: var(--shadow-orange); }
+        .nav-tab i { margin-right: 6px; font-size: 0.75rem; }
+
+        .categories-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            background: var(--bg-base);
+            border-radius: var(--radius-xl);
+            padding: 16px;
+            border: 1px solid var(--border-orange);
+            order: 3;
+        }
+
+        #category-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .category {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255,77,77,0.2);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            cursor: pointer;
+            background: var(--bg-elevated);
+            transition: all var(--transition);
+        }
+        .category-header:focus-visible { outline: none; background: rgba(255, 77, 77, 0.3); }
+        .category-header span { 
+            color: var(--white-pure); 
+            font-weight: 700; 
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        .category-header:hover { background: rgba(255, 77, 77, 0.15); }
+        .category-header:hover span { color: var(--orange-primary); }
+        .category-header i { 
+            font-size: 0.7rem; 
+            color: var(--text-secondary); 
+            transition: all var(--transition);
+        }
+        .category-header.open i {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .category-content.open {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .channel-vertical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+            padding: 12px;
+        }
+        
+        .channel-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-orange);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .channel-card:focus-visible { outline: none; border-color: var(--orange-primary); transform: scale(0.96); }
+        .channel-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--orange-primary);
+            box-shadow: var(--shadow-orange);
+        }
+        .channel-card.playing {
+            border: 2px solid var(--orange-primary);
+            box-shadow: var(--shadow-orange);
+        }
+        .channel-logo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #1e1e2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .channel-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .channel-logo.fallback {
+            font-size: 1.5rem;
+            color: var(--orange-primary);
+        }
+        .channel-title {
+            font-size: 0.55rem;
+            font-weight: 600;
+            padding: 4px 3px;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        .recommendations-section { margin-bottom: 14px; }
+        .section-title { font-size: 0.7rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .rec-horizontal-scroll { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 12px; 
+            padding: 4px 2px 10px 2px; 
+            scrollbar-width: thin; 
+        }
+        .rec-card-h {
+            flex: 0 0 110px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-orange);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+        .rec-card-h:focus-visible { border-color: var(--orange-primary); outline: none; }
+        .rec-card-h:hover { transform: translateY(-2px); border-color: var(--orange-primary); box-shadow: var(--shadow-orange); }
+        .rec-logo-full { width: 100%; aspect-ratio: 1 / 1; background: #1e1e2a; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .rec-logo-full img { width: 100%; height: 100%; object-fit: cover; }
+        .rec-card-h .rec-title { font-size: 0.65rem; font-weight: 600; padding: 6px 4px; color: white; background: rgba(0,0,0,0.7); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+
+        .selected-category {
+            background: rgba(255, 77, 77, 0.08);
+            border: 1px solid var(--border-orange);
+            border-radius: var(--radius-lg);
+            padding: 6px 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .selected-category.hide { display: none; }
+        .selected-category i { color: var(--orange-primary); font-size: 0.85rem; }
+        .selected-category span { color: var(--text-secondary); font-size: 0.7rem; }
+        .selected-category .category-name { color: var(--orange-primary); font-weight: 700; font-size: 0.8rem; }
+
+        .loading { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 25px 15px; }
+        .loading-spinner { width: 25px; height: 25px; border: 2px solid transparent; border-top-color: var(--orange-primary); border-right-color: #3B82F6; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .error-message { padding: 14px; background: rgba(255, 77, 77, 0.1); border: 1px solid var(--orange-primary); border-radius: var(--radius-lg); text-align: center; font-size: 0.75rem; }
+        .retry-button { display: inline-block; margin-top: 8px; padding: 5px 14px; background: var(--gradient-orange); color: white; border-radius: 99px; cursor: pointer; font-size: 0.7rem; }
+
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/G4HWcbVX/Picsart-26-04-07-23-52-25-537.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container { background: transparent; padding: 20px; width: 90%; max-width: 350px; }
+        .login-header { text-align: center; margin-bottom: 20px; }
+        .login-logo { width: 140px; height: auto; margin-bottom: 12px; }
+        .input-group { position: relative; margin-bottom: 16px; }
+        .input-group i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #e34200; font-size: 0.9rem; }
+        .form-control {
+            width: 100%;
+            padding: 10px 10px 10px 38px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e34200;
+            border-radius: 10px;
+            color: white;
+            font-size: 0.85rem;
+        }
+        .form-control:focus { outline: none; border-color: #7CFC00; }
+        .login-button {
+            width: 100%;
+            padding: 9px;
+            background: linear-gradient(135deg, #d67b60, #e34200);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+        .login-status { margin-top: 12px; padding: 8px; border-radius: 10px; text-align: center; display: none; font-size: 0.75rem; }
+        .login-status.error { display: block; background: rgba(227, 66, 0, 0.15); border: 1px solid #e34200; }
+        .login-status.success { display: block; background: rgba(124, 252, 0, 0.15); border: 1px solid #7CFC00; color: #7CFC00; }
+        
+        .footer-note { 
+            text-align: center; 
+            margin-top: 15px; 
+            color: #F0FFF0; 
+            font-size: 0.6rem; 
+        }
+        
+        .footer-link {
+            text-align: center;
+            margin-top: 8px;
+        }
+        .footer-link a {
+            color: #FF4D4D;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 4px 12px;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            border-radius: 20px;
+            background: rgba(255, 77, 77, 0.05);
+        }
+        .footer-link a:hover {
+            color: #FFFFFF;
+            background: var(--orange-primary);
+            border-color: var(--orange-primary);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-orange);
+        }
+
+        /* === ESTILOS DEL BOX DIALOG DE COMUNIDAD === */
+        .community-dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.4s ease;
+        }
+        .community-dialog-box {
+            background: var(--bg-surface);
+            border: 2px solid var(--orange-primary);
+            border-radius: var(--radius-xl);
+            padding: 35px 30px 30px 30px;
+            max-width: 420px;
+            width: 92%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 77, 77, 0.3);
+            animation: slideUp 0.5s ease;
+        }
+        .community-dialog-box .dialog-icon {
+            font-size: 3.5rem;
+            color: var(--orange-primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .community-dialog-box h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--white-pure);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .community-dialog-box .dialog-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .community-dialog-box .dialog-subtitle strong {
+            color: var(--orange-primary);
+        }
+        .dialog-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .dialog-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        .dialog-btn-primary {
+            background: var(--gradient-orange);
+            color: white;
+            box-shadow: var(--shadow-orange);
+        }
+        .dialog-btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 32px rgba(255, 77, 77, 0.5);
+        }
+        .dialog-btn-secondary {
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 1px solid var(--border-orange);
+        }
+        .dialog-btn-secondary:hover {
+            background: var(--orange-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        .dialog-btn i {
+            margin-right: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .rec-card-h { flex: 0 0 95px; }
+            .nav-tab { padding: 6px 4px; font-size: 0.65rem; }
+            .main-content { padding: 10px 12px; gap: 10px; }
+            .main-logo { height: 35px; max-width: 120px; }
+            .brand-image { height: 35px; max-width: 160px; }
+            .channel-vertical-grid {
+                grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+                gap: 8px;
+            }
+            .channel-title { font-size: 0.5rem; }
+            .community-dialog-box { padding: 25px 20px 20px 20px; }
+            .community-dialog-box h2 { font-size: 1.1rem; }
+            .dialog-btn { padding: 10px 20px; min-width: 100px; font-size: 0.8rem; }
+        }
+        @media (min-width: 1200px) {
+            .rec-card-h { flex: 0 0 140px; }
+            .channel-vertical-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BOX DIALOG DE COMUNIDAD -->
+    <div class="community-dialog-overlay" id="communityDialog">
+        <div class="community-dialog-box">
+            <span class="dialog-icon">🚀</span>
+            <h2>ÚNETE A NUESTRA<br>COMUNIDAD INNOVACIÓN DIGITAL</h2>
+            <p class="dialog-subtitle">
+                🌟 Accede a contenido exclusivo,<br>
+                <strong>cuentas premium</strong> y <strong>actualizaciones</strong>.<br>
+                ¡Únicos canales oficiales de innovación digital!
+            </p>
+            <div class="dialog-buttons">
+                <button class="dialog-btn dialog-btn-primary" id="btnUnirme">
+                    <i class="fas fa-users"></i> UNIRME
+                </button>
+                <button class="dialog-btn dialog-btn-secondary" id="btnContinuar">
+                    <i class="fas fa-arrow-right"></i> CONTINUAR
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-container">
+            <div class="login-header">
+                <img src="https://i.ibb.co/KpLDfH5R/Picsart-26-04-07-23-48-29-904.png" alt="Logo" class="login-logo">
+                <p>ACCESO PRIVADO</p>
+            </div>
+            <div class="input-group"><i class="fas fa-user"></i><input type="text" class="form-control" id="username" placeholder="Cuenta" value="roberto_soto"></div>
+            <div class="input-group"><i class="fas fa-lock"></i><input type="password" class="form-control" id="password" placeholder="Contraseña" value="Soto2023Ro"></div>
+            <button class="login-button" id="loginBtn">Iniciar sesión</button>
+            <div class="login-status" id="loginStatus"></div>
+            <div class="footer-note"><i class="fas fa-crown"></i> Desarrollado por Angel Exspectrus</div>
+            <div class="footer-link">
+                <a href="https://angel-iluminaty.github.io/IluminatyPages/" target="_blank">✨ PIDE TU ACTIVACIÓN AQUÍ ✨</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="mainContent" style="display: none;">
+        <header class="header">
+            <div class="header-left">
+                <img src="https://i.ibb.co/HDgQVhTB/Picsart-26-04-07-23-40-41-890.png" alt="Logo" class="main-logo">
+                <img src="https://i.ibb.co/q3Qx3hLP/Picsart-26-07-04-15-23-26-780.jpg" alt="Angel Exspectrus" class="brand-image">
+            </div>
+            <div class="header-right">
+                <div class="menu-container">
+                    <div class="menu-button" id="menuButton"><i class="fas fa-bars"></i></div>
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <a href="https://angel-iluminaty.github.io/IluminatyPages/" target="_blank" class="community-link">
+                            <i class="fas fa-users"></i> COMUNIDAD INNOVACIÓN
+                        </a>
+                        <div class="expiry-section">
+                            <div class="expiry-label">VENCIMIENTO:</div>
+                            <div class="expiry-date" id="expiryDisplay">--/--/----</div>
+                        </div>
+                        <div class="menu-item logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>SALIR</span></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar canales, películas o series...">
+                    <button class="search-clear" id="searchClear"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+
+            <div class="video-wrapper">
+                <div class="video-error" id="videoError"></div>
+                <div class="video-container" id="videoContainer">
+                    <video id="videoPlayer" controls autoplay playsinline></video>
+                    <div class="custom-controls">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabs-container">
+                <div class="nav-tabs">
+                    <div class="nav-tab active" data-tab="live"><i class="fas fa-broadcast-tower"></i>LIVE</div>
+                    <div class="nav-tab" data-tab="movies"><i class="fas fa-film"></i>MOVIES</div>
+                    <div class="nav-tab" data-tab="series"><i class="fas fa-layer-group"></i>SERIES</div>
+                </div>
+            </div>
+
+            <div class="categories-wrapper">
+                <div class="selected-category hide" id="selectedCategory">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Reproduciendo desde:</span>
+                    <span class="category-name" id="selectedCategoryName">-</span>
+                </div>
+                <div class="recommendations-section">
+                    <div class="section-title"><i class="fas fa-star-of-life"></i> RECOMENDACIONES</div>
+                    <div class="rec-horizontal-scroll" id="recommendationsRow"></div>
+                </div>
+                <div id="category-container"><div class="loading"><div class="loading-spinner"></div><p>CARGANDO...</p></div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // === CREDENCIALES POR DEFECTO ===
+        const DEFAULT_USER = "roberto_soto";
+        const DEFAULT_PASS = "Soto2023Ro";
+
+        let config = { protocol: 'http', host: 'gntvplay.online', port: '8080', username: '', password: '' };
+        let loginSuccess = false;
+        let userExpiryDate = null;
+        const state = { currentTab: 'live', categories: {}, loadedContent: false, cacheBuster: new Date().getTime() };
+        
+        let currentStreamUrl = null;
+        let currentStreamType = null;
+        let currentStreamTitle = null;
+        let currentCategoryName = null;
+        let retryCount = 0;
+        const MAX_RETRIES = 5;
+        let retryTimeout = null;
+        let currentHls = null;
+        let messageTimeout = null;
+        let categoryMessageTimeout = null;
+        
+        let liveStreamsCache = [@CCORCH@;
+        let moviesCache = [@CCORCH@;
+        let seriesCache = [@CCORCH@;
+        let allContentCache = [@CCORCH@;
+        let currentChannelList = [@CCORCH@;
+        let currentChannelIndex = -1;
+        
+        let channelToCategoryMap = new Map();
+        let channelLogoMap = new Map();
+        
+        const domElements = {
+            videoPlayer: document.getElementById('videoPlayer'),
+            currentContent: document.getElementById('currentContent'),
+            categoryContainer: document.getElementById('category-container'),
+            navTabs: document.querySelectorAll('.nav-tab'),
+            videoError: document.getElementById('videoError'),
+            loginOverlay: document.getElementById('loginOverlay'),
+            mainContent: document.getElementById('mainContent'),
+            loginBtn: document.getElementById('loginBtn'),
+            loginStatus: document.getElementById('loginStatus'),
+            username: document.getElementById('username'),
+            password: document.getElementById('password'),
+            menuDropdown: document.getElementById('menuDropdown'),
+            expiryDisplay: document.getElementById('expiryDisplay'),
+            menuButton: document.getElementById('menuButton'),
+            logoutBtn: document.getElementById('logoutBtn'),
+            recommendationsRow: document.getElementById('recommendationsRow'),
+            searchInput: document.getElementById('searchInput'),
+            searchResults: document.getElementById('searchResults'),
+            searchClear: document.getElementById('searchClear'),
+            selectedCategory: document.getElementById('selectedCategory'),
+            selectedCategoryName: document.getElementById('selectedCategoryName'),
+            communityDialog: document.getElementById('communityDialog'),
+            btnUnirme: document.getElementById('btnUnirme'),
+            btnContinuar: document.getElementById('btnContinuar')
+        };
+
+        function showTempMessage(message, isError = false) {
+            if (!domElements.currentContent) return;
+            if (messageTimeout) clearTimeout(messageTimeout);
+            domElements.currentContent.textContent = message;
+            domElements.currentContent.style.color = isError ? '#FF4D4D' : '#3B82F6';
+            messageTimeout = setTimeout(() => {
+                if(domElements.currentContent) domElements.currentContent.textContent = '';
+                if(domElements.currentContent) domElements.currentContent.style.color = '#3B82F6';
+            }, 2500);
+        }
+
+        function showCategoryMessage(categoryName) {
+            if (!categoryName) return;
+            if (categoryMessageTimeout) clearTimeout(categoryMessageTimeout);
+            domElements.selectedCategoryName.textContent = categoryName;
+            domElements.selectedCategory.classList.remove('hide');
+            categoryMessageTimeout = setTimeout(() => {
+                domElements.selectedCategory.classList.add('hide');
+            }, 3000);
+        }
+
+        function clearPlayingHighlight() {
+            document.querySelectorAll('.channel-card.playing').forEach(item => {
+                item.classList.remove('playing');
+            });
+        }
+
+        function findAndOpenCategoryAndHighlightChannel(channelName, categoryName) {
+            clearPlayingHighlight();
+            if (!channelName) return;
+            if (categoryName) showCategoryMessage(categoryName);
+            const allCategories = document.querySelectorAll('.category');
+            let targetCategory = null;
+            let targetChannel = null;
+            for (const category of allCategories) {
+                const catNameElem = category.querySelector('.category-header span');
+                if (catNameElem) {
+                    let catText = catNameElem.textContent.replace('💥 ', '').trim();
+                    if (catText.toLowerCase() === (categoryName || '').toLowerCase()) {
+                        targetCategory = category;
+                        break;
+                    }
+                }
+            }
+            if (targetCategory) {
+                const channels = targetCategory.querySelectorAll('.channel-card');
+                for (const channel of channels) {
+                    const titleSpan = channel.querySelector('.channel-title');
+                    if (titleSpan && titleSpan.textContent.trim().toLowerCase() === channelName.toLowerCase()) {
+                        targetChannel = channel;
+                        break;
+                    }
+                }
+                const content = targetCategory.querySelector('.category-content');
+                const header = targetCategory.querySelector('.category-header');
+                if (content && !content.classList.contains('open')) {
+                    content.classList.add('open');
+                    if (header) header.classList.add('open');
+                }
+                setTimeout(() => { targetCategory.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+                if (targetChannel) {
+                    setTimeout(() => {
+                        targetChannel.classList.add('playing');
+                        targetChannel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                }
+            }
+        }
+
+        function performSearch(query) {
+            if (!query.trim()) { domElements.searchResults.classList.remove('show'); return; }
+            const lowerQuery = query.toLowerCase();
+            const results = allContentCache.filter(item => item.name.toLowerCase().includes(lowerQuery)).slice(0, 15);
+            if (results.length === 0) {
+                domElements.searchResults.innerHTML = '<div style="padding: 10px; text-align: center; color: var(--text-secondary); font-size: 0.7rem;">❌ Sin resultados</div>';
+                domElements.searchResults.classList.add('show');
+                return;
+            }
+            domElements.searchResults.innerHTML = '';
+            results.forEach(result => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'search-result-item';
+                let iconHtml = `<div class="search-result-icon"><i class="fas ${result.type === 'live' ? 'fa-broadcast-tower' : result.type === 'movie' ? 'fa-film' : 'fa-layer-group'}" style="color:#FF4D4D; font-size:1.2rem;"></i></div>`;
+                if (result.logo && result.logo.trim() !== '') {
+                    iconHtml = `<div class="search-result-icon"><img src="${result.logo}" onerror="this.onerror=null;this.parentElement.innerHTML='<i class=\'fas ${result.type === 'live' ? 'fa-broadcast-tower' : 'fa-film'}\' style=\\'color:#FF4D4D; font-size:1.2rem;\\'></i>'"></div>`;
+                }
+                itemDiv.innerHTML = `${iconHtml}<div class="search-result-info"><div class="search-result-title">${result.name.substring(0, 45)}</div><div class="search-result-type">${result.type === 'live' ? 'CANAL' : result.type === 'movie' ? 'PELÍCULA' : 'SERIE'}</div></div>`;
+                itemDiv.onclick = () => {
+                    let foundCategory = channelToCategoryMap.get(result.name) || null;
+                    if (result.type === 'series') {
+                        alert('Selecciona un episodio dentro de la sección SERIES');
+                        domElements.searchResults.classList.remove('show');
+                        domElements.searchInput.value = '';
+                        return;
+                    }
+                    playChannel(result.url, result.mime, result.name, false, null, -1, foundCategory);
+                    domElements.searchResults.classList.remove('show');
+                    domElements.searchInput.value = '';
+                };
+                domElements.searchResults.appendChild(itemDiv);
+            });
+            domElements.searchResults.classList.add('show');
+        }
+
+        async function precacheAllContent() {
+            try {
+                const liveUrl = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_live_streams`;
+                const moviesUrl = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_vod_streams`;
+                const seriesUrl = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_series`;
+                const [liveRes, moviesRes, seriesRes@CCORCH@ = await Promise.all([fetch(liveUrl,{cache:'no-store'}),fetch(moviesUrl,{cache:'no-store'}),fetch(seriesUrl,{cache:'no-store'})@CCORCH@);
+                if(liveRes.ok) liveStreamsCache = await liveRes.json();
+                if(moviesRes.ok) moviesCache = await moviesRes.json();
+                if(seriesRes.ok) seriesCache = await seriesRes.json();
+                allContentCache = [@CCORCH@;
+                if (liveStreamsCache.length) {
+                    liveStreamsCache.forEach(stream => {
+                        allContentCache.push({
+                            name: stream.name, type: 'live', logo: stream.stream_icon || '',
+                            url: `${config.protocol}://${config.host}:${config.port}/live/${config.username}/${config.password}/${stream.stream_id}.m3u8`,
+                            mime: 'm3u8'
+                        });
+                        if(stream.stream_icon) channelLogoMap.set(stream.name, stream.stream_icon);
+                    });
+                }
+                if (moviesCache.length) {
+                    moviesCache.forEach(movie => {
+                        allContentCache.push({
+                            name: movie.name, type: 'movie', logo: movie.stream_icon || '',
+                            url: `${config.protocol}://${config.host}:${config.port}/movie/${config.username}/${config.password}/${movie.stream_id}.${movie.container_extension || 'mp4'}`,
+                            mime: movie.container_extension || 'mp4'
+                        });
+                    });
+                }
+                if (seriesCache.length) {
+                    seriesCache.forEach(series => {
+                        allContentCache.push({
+                            name: series.name, type: 'series', logo: series.stream_icon || '',
+                            url: `${config.protocol}://${config.host}:${config.port}/series/${config.username}/${config.password}/${series.series_id}/1/1.mp4`,
+                            mime: 'mp4',
+                            seriesId: series.series_id
+                        });
+                    });
+                }
+                console.log('Cache listo con logos');
+            } catch(e) { console.log("Precache error", e); }
+        }
+
+        async function buildRecommendations() {
+            if(!domElements.recommendationsRow) return;
+            const combined = [@CCORCH@;
+            if(liveStreamsCache.length) combined.push(...liveStreamsCache.map(s => ({ name: s.name, logo: s.stream_icon, url: `${config.protocol}://${config.host}:${config.port}/live/${config.username}/${config.password}/${s.stream_id}.m3u8`, mime: 'm3u8' })));
+            if(moviesCache.length) combined.push(...moviesCache.map(s => ({ name: s.name, logo: s.stream_icon, url: `${config.protocol}://${config.host}:${config.port}/movie/${config.username}/${config.password}/${s.stream_id}.${s.container_extension||'mp4'}`, mime: 'mp4' })));
+            for(let i=combined.length-1; i>0; i--){ const j=Math.floor(Math.random()*(i+1)); [combined[i@CCORCH@,combined[j@CCORCH@@CCORCH@=[combined[j@CCORCH@,combined[i@CCORCH@@CCORCH@; }
+            const topRecos = combined.slice(0, 10);
+            domElements.recommendationsRow.innerHTML = '';
+            for(const rec of topRecos) {
+                const card = document.createElement('div'); card.className = 'rec-card-h';
+                card.innerHTML = `<div class="rec-logo-full"><img src="${rec.logo || 'https://via.placeholder.com/140?text=NO'}" alt="${rec.name}" onerror="this.src='https://via.placeholder.com/140?text=${rec.name.charAt(0)}'"></div><div class="rec-title">${rec.name.length > 22 ? rec.name.slice(0,19)+'..' : rec.name}</div>`;
+                card.onclick = () => playChannel(rec.url, rec.mime, rec.name);
+                domElements.recommendationsRow.appendChild(card);
+            }
+        }
+
+        function attemptAutoRecovery() {
+            if (retryCount < MAX_RETRIES && currentStreamUrl) {
+                retryCount++;
+                showTempMessage(`⚠️ Reconectando (${retryCount}/${MAX_RETRIES})...`, true);
+                if (retryTimeout) clearTimeout(retryTimeout);
+                retryTimeout = setTimeout(() => { playChannel(currentStreamUrl, currentStreamType, currentStreamTitle, true); }, 2500);
+            } else if (retryCount >= MAX_RETRIES) { showTempMessage(`❌ No se pudo restablecer`, true); retryCount = 0; }
+        }
+
+        function playChannel(url, type, title, isRetry = false, channelList = null, idx = -1, categoryName = null) {
+            if (!domElements.videoError) return;
+            if (!isRetry) {
+                retryCount = 0; currentStreamUrl = url; currentStreamType = type; currentStreamTitle = title; currentCategoryName = categoryName;
+                if (retryTimeout) clearTimeout(retryTimeout);
+                if(channelList) { currentChannelList = channelList; currentChannelIndex = idx; }
+                setTimeout(() => findAndOpenCategoryAndHighlightChannel(title, categoryName), 500);
+            }
+            domElements.videoError.style.display = 'none';
+            const videoPlayer = domElements.videoPlayer;
+            if (currentHls) { currentHls.destroy(); currentHls = null; }
+            if (videoPlayer.hls) { videoPlayer.hls.destroy(); videoPlayer.hls = null; }
+            try {
+                const urlWithCacheBuster = url.includes('?') ? `${url}&_cb=${state.cacheBuster}` : `${url}?_cb=${state.cacheBuster}`;
+                if (type === 'm3u8' || url.includes('.m3u8')) {
+                    if (Hls.isSupported()) {
+                        const hls = new Hls({ xhrSetup: function(xhr) { xhr.setRequestHeader('User-Agent', 'Mozilla/5.0'); }, maxBufferLength: 30 });
+                        hls.on(Hls.Events.MANIFEST_PARSED, function() { videoPlayer.play().catch(e=>console.log(e)); showTempMessage(`▶ REPRODUCIENDO: ${title}`); domElements.videoError.style.display='none'; retryCount=0; });
+                        hls.on(Hls.Events.ERROR, function(event, data) { if(data.fatal){ if(data.type===Hls.ErrorTypes.NETWORK_ERROR) attemptAutoRecovery(); else if(data.type===Hls.ErrorTypes.MEDIA_ERROR) hls.recoverMediaError(); else attemptAutoRecovery(); } });
+                        hls.loadSource(urlWithCacheBuster); hls.attachMedia(videoPlayer); videoPlayer.hls = hls; currentHls = hls;
+                    } else { videoPlayer.src = urlWithCacheBuster; videoPlayer.play().catch(e=>console.log(e)); }
+                } else { videoPlayer.src = urlWithCacheBuster; videoPlayer.play().catch(e=>console.log(e)); }
+                if (!isRetry) showTempMessage(`▶ REPRODUCIENDO: ${title}`);
+            } catch (error) { attemptAutoRecovery(); }
+        }
+
+        async function loadCategories(contentType) {
+            try {
+                if (!domElements.categoryContainer) return;
+                domElements.categoryContainer.innerHTML = `<div class="loading"><div class="loading-spinner"></div><p>CARGANDO ${contentType === 'live' ? 'CANALES' : contentType === 'movies' ? 'PELÍCULAS' : 'SERIES'}</p></div>`;
+                let apiEndpoint = '';
+                if (contentType === 'live') apiEndpoint = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_live_categories`;
+                else if (contentType === 'movies') apiEndpoint = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_vod_categories`;
+                else apiEndpoint = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_series_categories`;
+                const response = await fetch(apiEndpoint, { cache: 'no-store' }); 
+                if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+                const categories = await response.json();
+                if (!Array.isArray(categories) || categories.length === 0) { domElements.categoryContainer.innerHTML = `<p style="text-align: center; padding: 20px;">⚠ SIN CATEGORÍAS ⚠</p>`; return; }
+                state.categories[contentType@CCORCH@ = categories; 
+                let categoriesHTML = '';
+                for (const category of categories) {
+                    categoriesHTML += `
+                        <div class="category" data-category-id="${category.category_id}" data-category-name="${category.category_name}">
+                            <div class="category-header" onclick="toggleCategory(this)">
+                                <span>💥 ${category.category_name}</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="category-content">
+                                <div class="loading"><div class="loading-spinner"></div><p>CARGANDO...</p></div>
+                            </div>
+                        </div>
+                    `;
+                }
+                domElements.categoryContainer.innerHTML = categoriesHTML; 
+                state.loadedContent = true;
+            } catch (error) { 
+                if (domElements.categoryContainer) 
+                    domElements.categoryContainer.innerHTML = `<div class="error-message"><p>⚠ ERROR</p><a href="javascript:void(0);" class="retry-button" onclick="loadCategories('${contentType}')">REINTENTAR</a></div>`; 
+            }
+        }
+
+        async function loadCategoryContent(categoryElement, categoryId, contentType, categoryName) {
+            const contentContainer = categoryElement.querySelector('.category-content');
+            try {
+                let apiEndpoint = '';
+                if (contentType === 'live') apiEndpoint = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_live_streams&category_id=${categoryId}`;
+                else if (contentType === 'movies') apiEndpoint = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_vod_streams&category_id=${categoryId}`;
+                else apiEndpoint = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_series&category_id=${categoryId}`;
+                const response = await fetch(apiEndpoint, { cache: 'no-store' }); 
+                if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+                const content = await response.json();
+                if (!Array.isArray(content) || content.length === 0) { contentContainer.innerHTML = `<p style="padding: 15px; text-align: center;">⚠ SIN CONTENIDO ⚠</p>`; return; }
+                
+                let contentHTML = '<div class="channel-vertical-grid">';
+                const channelNav = [@CCORCH@;
+                for (const item of content) {
+                    const itemName = item.name; 
+                    const itemIcon = item.stream_icon || '';
+                    if (!channelToCategoryMap.has(itemName)) channelToCategoryMap.set(itemName, categoryName);
+                    
+                    if (contentType === 'live') { 
+                        const streamUrl = `${config.protocol}://${config.host}:${config.port}/live/${config.username}/${config.password}/${item.stream_id}.m3u8`; 
+                        channelNav.push({ name: itemName, url: streamUrl, type: 'm3u8' });
+                        contentHTML += `
+                            <div class="channel-card" data-url="${streamUrl}" data-type="m3u8" data-title="${itemName.replace(/'/g, "\\'")}" data-idx="${channelNav.length-1}" data-category="${categoryName}">
+                                <div class="channel-logo">${itemIcon ? `<img src="${itemIcon}" onerror="this.src='https://via.placeholder.com/80?text=${itemName.charAt(0)}'">` : `<i class="fas fa-tv"></i>`}</div>
+                                <div class="channel-title">${itemName.length > 15 ? itemName.slice(0,12)+'..' : itemName}</div>
+                            </div>
+                        `; 
+                    }
+                    else if (contentType === 'movies') { 
+                        const containerExt = item.container_extension || 'mp4'; 
+                        const streamUrl = `${config.protocol}://${config.host}:${config.port}/movie/${config.username}/${config.password}/${item.stream_id}.${containerExt}`; 
+                        channelNav.push({ name: itemName, url: streamUrl, type: containerExt });
+                        contentHTML += `
+                            <div class="channel-card" data-url="${streamUrl}" data-type="${containerExt}" data-title="${itemName.replace(/'/g, "\\'")}" data-idx="${channelNav.length-1}" data-category="${categoryName}">
+                                <div class="channel-logo">${itemIcon ? `<img src="${itemIcon}" onerror="this.src='https://via.placeholder.com/80?text=${itemName.charAt(0)}'">` : `<i class="fas fa-film"></i>`}</div>
+                                <div class="channel-title">${itemName.length > 15 ? itemName.slice(0,12)+'..' : itemName}</div>
+                            </div>
+                        `; 
+                    }
+                    else { 
+                        contentHTML += `
+                            <div class="channel-card" data-series-id="${item.series_id}" data-category="${categoryName}">
+                                <div class="channel-logo">${itemIcon ? `<img src="${itemIcon}" onerror="this.src='https://via.placeholder.com/80?text=${itemName.charAt(0)}'">` : `<i class="fas fa-layer-group"></i>`}</div>
+                                <div class="channel-title">${itemName.length > 15 ? itemName.slice(0,12)+'..' : itemName}</div>
+                            </div>
+                        `; 
+                    }
+                }
+                contentHTML += '</div>';
+                contentContainer.innerHTML = contentHTML;
+                if(contentType !== 'series') categoryElement.currentChannelList = channelNav;
+                
+                contentContainer.querySelectorAll('.channel-card').forEach(card => {
+                    const url = card.getAttribute('data-url'); 
+                    const type = card.getAttribute('data-type'); 
+                    const title = card.getAttribute('data-title'); 
+                    const idx = card.getAttribute('data-idx'); 
+                    const catName = card.getAttribute('data-category');
+                    if(url && title) {
+                        card.onclick = () => { 
+                            if(categoryElement.currentChannelList) 
+                                playChannel(url, type, title, false, categoryElement.currentChannelList, parseInt(idx), catName || categoryName); 
+                            else 
+                                playChannel(url, type, title, false, null, -1, catName || categoryName); 
+                        };
+                    } else { 
+                        const seriesId = card.getAttribute('data-series-id'); 
+                        const catName = card.getAttribute('data-category'); 
+                        if(seriesId) card.onclick = () => loadSeriesInfo(card, seriesId, catName || categoryName); 
+                    }
+                });
+            } catch (error) { 
+                contentContainer.innerHTML = `<div class="error-message"><p>⚠ ERROR</p><a href="javascript:void(0);" class="retry-button" onclick="loadCategoryContent(this.closest('.category'), ${categoryId}, '${contentType}', '${categoryName}')">REINTENTAR</a></div>`; 
+            }
+        }
+
+        window.toggleCategory = function(headerElement) {
+            const categoryElement = headerElement.parentElement; 
+            const contentElement = categoryElement.querySelector('.category-content');
+            contentElement.classList.toggle('open'); 
+            headerElement.classList.toggle('open');
+            if (contentElement.classList.contains('open') && contentElement.querySelector('.loading')) { 
+                const categoryId = categoryElement.getAttribute('data-category-id'); 
+                loadCategoryContent(categoryElement, categoryId, state.currentTab, categoryElement.getAttribute('data-category-name')); 
+            }
+        };
+        
+        async function loadSeriesInfo(element, seriesId, categoryName) { 
+            showCategoryMessage(categoryName); 
+            const parentCard = element;
+            const loadingMsg = document.createElement('div'); 
+            loadingMsg.className='series-info'; 
+            loadingMsg.innerHTML='<div class="loading"><div class="loading-spinner"></div><p>CARGANDO...</p></div>'; 
+            parentCard.parentNode.insertBefore(loadingMsg, parentCard.nextSibling);
+            try { 
+                const resp=await fetch(`${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}&action=get_series_info&series_id=${seriesId}`); 
+                const data=await resp.json(); 
+                let seasonsHtml=''; 
+                for(let s in data.episodes){ 
+                    let eps=data.episodes[s@CCORCH@; 
+                    let epsHtml=''; 
+                    for(let ep of eps) 
+                        epsHtml+=`<div class="episode-item" onclick="playSeriesEpisode('${seriesId}','${ep.id}','${s}','${ep.container_extension||'mp4'}','S${s}E${ep.episode_num} - ${ep.title}')"><span>💥 S${s}E${ep.episode_num} - ${ep.title}</span></div>`; 
+                    seasonsHtml+=`<div class="season"><div class="season-header" onclick="toggleSeason(this)"><span>🔥 TEMPORADA ${s}</span><i class="fas fa-chevron-down"></i></div><div class="episode-list">${epsHtml}</div></div>`; 
+                } 
+                loadingMsg.innerHTML=seasonsHtml; 
+            } catch(e){ 
+                loadingMsg.innerHTML='<p>Error</p>'; 
+            } 
+        }
+        
+        window.toggleSeason = function(header) { 
+            const list=header.parentElement.querySelector('.episode-list'); 
+            list.classList.toggle('open'); 
+            const icon=header.querySelector('i'); 
+            if(icon) icon.classList.toggle('fa-chevron-down'); 
+        };
+        
+        window.playSeriesEpisode = function(seriesId, epId, season, container, title){ 
+            showTempMessage(`▶ ${title}`);
+            const streamUrl = `${config.protocol}://${config.host}:${config.port}/series/${config.username}/${config.password}/${seriesId}/${season}/${epId}.${container}`;
+            playChannel(streamUrl, container, title);
+        };
+        
+        function initApp() {
+            window.playChannel = playChannel; 
+            window.loadCategories = loadCategories;
+            
+            if (domElements.navTabs) {
+                domElements.navTabs.forEach(tab => tab.addEventListener('click', () => { 
+                    domElements.navTabs.forEach(t=>t.classList.remove('active')); 
+                    tab.classList.add('active'); 
+                    state.currentTab=tab.getAttribute('data-tab'); 
+                    clearPlayingHighlight(); 
+                    if(!state.categories[state.currentTab@CCORCH@) loadCategories(state.currentTab); 
+                    else displayExistingCategories(state.currentTab); 
+                }));
+            }
+            loadCategories('live');
+            
+            domElements.searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+            domElements.searchClear.addEventListener('click', () => { domElements.searchInput.value = ''; domElements.searchResults.classList.remove('show'); });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.search-container')) domElements.searchResults.classList.remove('show'); });
+        }
+        
+        function displayExistingCategories(contentType) { 
+            if(!domElements.categoryContainer) return; 
+            domElements.categoryContainer.innerHTML = '';
+            if(!state.categories[contentType@CCORCH@) return;
+            for(const cat of state.categories[contentType@CCORCH@) {
+                domElements.categoryContainer.innerHTML += `
+                    <div class="category" data-category-id="${cat.category_id}" data-category-name="${cat.category_name}">
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <span>💥 ${cat.category_name}</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="category-content">
+                            <div class="loading"><div class="loading-spinner"></div><p>CARGANDO...</p></div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        function logout() { 
+            localStorage.removeItem('angel_user'); 
+            localStorage.removeItem('angel_pass'); 
+            if(currentHls) currentHls.destroy(); 
+            domElements.videoPlayer.pause(); 
+            domElements.videoPlayer.src = ''; 
+            domElements.mainContent.style.display = 'none'; 
+            domElements.loginOverlay.style.display = 'flex'; 
+            loginSuccess = false; 
+            state.categories = {}; 
+            allContentCache = [@CCORCH@; 
+            channelToCategoryMap.clear(); 
+            clearPlayingHighlight(); 
+            domElements.expiryDisplay.textContent = '--/--/----';
+        }
+        
+        function updateExpiryDisplay(expTimestamp) {
+            if (expTimestamp) {
+                const expiryDate = new Date(expTimestamp * 1000);
+                const day = String(expiryDate.getDate()).padStart(2, '0');
+                const month = String(expiryDate.getMonth() + 1).padStart(2, '0');
+                const year = expiryDate.getFullYear();
+                domElements.expiryDisplay.textContent = `${day}/${month}/${year}`;
+            } else {
+                domElements.expiryDisplay.textContent = '--/--/----';
+            }
+        }
+        
+        // === FUNCIÓN DE LOGIN AUTOMÁTICO ===
+        async function autoLogin() {
+            domElements.username.value = DEFAULT_USER;
+            domElements.password.value = DEFAULT_PASS;
+            config.username = DEFAULT_USER;
+            config.password = DEFAULT_PASS;
+            
+            try {
+                const testUrl = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}`;
+                const res = await fetch(testUrl, { cache: 'no-store' });
+                const data = await res.json();
+                if(data.user_info?.auth === 1){
+                    loginSuccess = true;
+                    localStorage.setItem('angel_user', DEFAULT_USER);
+                    localStorage.setItem('angel_pass', DEFAULT_PASS);
+                    if(data.user_info.exp_date) {
+                        updateExpiryDisplay(data.user_info.exp_date);
+                    }
+                    domElements.loginOverlay.style.display = 'none';
+                    domElements.mainContent.style.display = 'flex';
+                    await precacheAllContent();
+                    await buildRecommendations();
+                    initApp();
+                } else {
+                    domElements.loginStatus.textContent = '❌ Credenciales incorrectas. Intenta manualmente.';
+                    domElements.loginStatus.className = 'login-status error';
+                }
+            } catch(e) {
+                domElements.loginStatus.textContent = '❌ Error de conexión. Intenta manualmente.';
+                domElements.loginStatus.className = 'login-status error';
+            }
+        }
+        
+        // === MANEJADOR DEL BOTÓN "UNIRME" ===
+        domElements.btnUnirme.addEventListener('click', function() {
+            window.open('https://angel-iluminaty.github.io/IluminatyPages/', '_blank');
+            // También cerramos el diálogo y continuamos con el auto-login
+            domElements.communityDialog.style.display = 'none';
+            autoLogin();
+        });
+
+        // === MANEJADOR DEL BOTÓN "CONTINUAR" ===
+        domElements.btnContinuar.addEventListener('click', function() {
+            domElements.communityDialog.style.display = 'none';
+            autoLogin();
+        });
+
+        // === MANEJADOR MANUAL DEL BOTÓN DE LOGIN ===
+        domElements.loginBtn.addEventListener('click', async function() {
+            const username = domElements.username.value.trim();
+            const password = domElements.password.value.trim();
+            config.username = username;
+            config.password = password;
+            
+            try {
+                const testUrl = `${config.protocol}://${config.host}:${config.port}/player_api.php?username=${config.username}&password=${config.password}`;
+                const res = await fetch(testUrl, { cache: 'no-store' });
+                const data = await res.json();
+                if(data.user_info?.auth === 1){
+                    loginSuccess = true;
+                    localStorage.setItem('angel_user', username);
+                    localStorage.setItem('angel_pass', password);
+                    if(data.user_info.exp_date) {
+                        updateExpiryDisplay(data.user_info.exp_date);
+                    }
+                    domElements.loginOverlay.style.display = 'none';
+                    domElements.mainContent.style.display = 'flex';
+                    await precacheAllContent();
+                    await buildRecommendations();
+                    initApp();
+                } else {
+                    domElements.loginStatus.textContent = '❌ Credenciales incorrectas';
+                    domElements.loginStatus.className = 'login-status error';
+                }
+            } catch(e) {
+                domElements.loginStatus.textContent = '❌ Error de conexión';
+                domElements.loginStatus.className = 'login-status error';
+            }
+        });
+        
+        domElements.menuButton.addEventListener('click', () => domElements.menuDropdown.classList.toggle('show'));
+        domElements.logoutBtn.addEventListener('click', logout);
+        window.addEventListener('click', (e) => { if(!e.target.closest('.menu-container')) domElements.menuDropdown.classList.remove('show'); });
+        
+        domElements.username.addEventListener('keypress', function(e) { if (e.key === 'Enter') domElements.loginBtn.click(); });
+        domElements.password.addEventListener('keypress', function(e) { if (e.key === 'Enter') domElements.loginBtn.click(); });
+
+        // === INICIALIZACIÓN: PRIMERO EL DIÁLOGO, LUEGO EL AUTO-LOGIN ===
+        // El diálogo ya está visible por defecto (display:flex)
+        // Solo cuando el usuario haga clic en UNIRME o CONTINUAR, se ocultará y comenzará el auto-login
+        // Nota: El diálogo se muestra siempre al cargar la página, independientemente de las credenciales guardadas
+        
+        // Si el usuario ya tiene credenciales guardadas, igual mostramos el diálogo primero
+        // El auto-login se ejecutará después de que el usuario haga clic en CONTINUAR o UNIRME
+    </script>
+</body>
+</html>
+    
